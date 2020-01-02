@@ -7,6 +7,12 @@ public class Topic{
     @Id
     String id;
     int weight;
+
+    public Topic(){
+        this.id="999";
+        this.weight=999;
+    }
+
     public Topic(String id,int weight){
         this.id=id;
         this.weight=weight;
