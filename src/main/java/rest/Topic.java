@@ -11,6 +11,7 @@ public class Topic{
     public Topic(){
         this.id="999";
         this.weight=999;
+        System.out.println("in cons1");
     }
 
     public Topic(String id,int weight){

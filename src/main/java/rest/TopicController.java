@@ -5,7 +5,7 @@ import java.util.*;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 //Skipping individual services for now, it will be handled by RestControllers only.
 
@@ -28,14 +28,14 @@ public class TopicController {
 	}
 
 	@RequestMapping(method=RequestMethod.POST,value="/topics/add")
-	public String addTopic(Topic topic) {
-		System.out.println("in post mapping");
+	public String addTopic(@RequestBody Topic topic) {
+		System.out.println("in post mapping "+topic.id);
 		topics.save(topic);
 		return "Done";
 	}
 
 	@RequestMapping(method=RequestMethod.POST,value="/topics/update")
-	public void updateTopic(Topic topic) {
+	public void updateTopic(@RequestBody Topic topic) {
 		topics.save(topic);
 	}
 
